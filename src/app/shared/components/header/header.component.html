@@ -1,0 +1,15 @@
+<mat-toolbar  class="header-toolbar">
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      matInput
+      placeholder="Pesquisar usuários..."
+      [formControl]="searchControl"
+    />
+  </mat-form-field>
+  <span class="spacer"></span>
+  <app-toggle-theme />
+</mat-toolbar>
+
+
+<app-user-list />

@@ -1,9 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
+import { AddButtonComponent } from './shared/components/add-button/add-button.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ RouterModule, HeaderComponent, AddButtonComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

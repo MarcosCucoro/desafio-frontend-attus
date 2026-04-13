@@ -1,0 +1,44 @@
+.header-toolbar {
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 16px 24px;
+  background-color: var(--mdc-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+app-user-list {
+  display: block;
+  padding: 0 24px 24px;
+}
+
+.search-field {
+  max-width: 500px;
+  flex: 1;
+
+  mat-icon {
+    color: var(--mdc-on-surface);
+  }
+
+  input {
+    color: var(--mdc-on-surface);
+  }
+
+  input::placeholder {
+    color: var(--mdc-on-surface);
+  }
+
+}
+
+.search-field .mat-mdc-text-field-wrapper {
+  border-radius: 20px;
+}
+
+.spacer {
+  flex: 1;
+}

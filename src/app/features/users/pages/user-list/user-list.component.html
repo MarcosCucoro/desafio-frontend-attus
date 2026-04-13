@@ -1,0 +1,73 @@
+<div class="users-container">
+  @if(loading()) {
+  <div class="skeleton-list">
+    @for (item of [1,2,3,4,5]; track item) {
+    <div class="skeleton-card">
+      <div class="skeleton-avatar"></div>
+
+      <div class="skeleton-content">
+        <div class="skeleton-line title"></div>
+        <div class="skeleton-line subtitle"></div>
+      </div>
+    </div>
+    }
+  </div>
+  }
+
+  @if(error()) {
+  <div class="error-container">
+    <p>{{ error() }}</p>
+  </div>
+  }
+
+  @if(!loading() && !error()) {
+  <div class="users-header">
+    <div>
+      <h1>Usuários Cadastrados</h1>
+      <p class="subtitle">{{ users().length }} usuários encontrados</p>
+    </div>
+  </div>
+
+  <div class="users-list">
+    @if (users().length > 0) {
+    @for (user of paginatedUsers(); track user.id) {
+    <mat-card class="user-card">
+      <mat-card-content>
+        <div class="user-info">
+          <div class="user-avatar">
+            <mat-icon>person</mat-icon>
+          </div>
+          <div class="user-details">
+            <h3>{{ user.name }}</h3>
+            <p>{{ user.email }}</p>
+          </div>
+          <mat-card-actions>
+            <button mat-icon-button (click)="showModalEdit(user)" matTooltip="Editar usuário">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="confirmDelete(user.id)" matTooltip="Deletar usuário">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    }
+    } @else {
+    <div class="empty-state">
+      <mat-icon>person_off</mat-icon>
+      <p>Nenhum usuário encontrado</p>
+    </div>
+    }
+  </div>
+  <mat-paginator
+    [length]="totalUser()"
+    [pageSize]="pageSize()"
+    [pageSizeOptions]="[5, 10, 20]"
+    pageIndex="pageIndex()"
+    (page)="onPageChange($event)"
+    showFirstLastButtons>
+  </mat-paginator>
+  }
+
+</div>

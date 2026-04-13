@@ -1,0 +1,60 @@
+
+> desafio-frontend-attus@0.0.0 build
+> ng build
+
+[33m❯[39m Building...
+[32m✔[39m Building...
+Application bundle generation failed. [2.021 seconds] - 2026-04-12T23:17:47.370Z
+
+[1m[33m[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mNG8113: MatFormField is not used within the template of UserModalComponent[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/shared/components/user-modal/user-modal.component.ts:13:67:
+[37m      13 │ ...ule, ReactiveFormsModule, [32mMatFormField[37m, MatInputModule, MatSele...
+         ╵                              [32m~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Opening tag "div" not terminated.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/shared/components/user-modal/user-modal.component.html:0:0:
+[37m      0 │ [32m[37m
+        ╵ [32m^[0m
+
+  Error occurs in the template of component UserModalComponent.
+
+    src/app/shared/components/user-modal/user-modal.component.ts:14:15:
+[37m      14 │   templateUrl: [32m'./user-modal.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mNG5002: Unexpected closing tag "div". It may happen when the tag has already been closed by another tag. For more info see https://www.w3.org/TR/html5/syntax.html#closing-elements-that-have-implied-end-tags[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/shared/components/user-modal/user-modal.component.html:72:0:
+[37m      72 │ [32m</div>[37m
+         ╵ [32m~~~~~~[0m
+
+  Error occurs in the template of component UserModalComponent.
+
+    src/app/shared/components/user-modal/user-modal.component.ts:14:15:
+[37m      14 │   templateUrl: [32m'./user-modal.component.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mUndefined function.
+   ╷
+6  │   $light-theme: mat.define-light-theme((
+   │ ┌───────────────^
+7  │ │   color: (
+8  │ │     primary: mat.define-palette(mat.$indigo-palette),
+9  │ │     accent: mat.define-palette(mat.$pink-palette),
+10 │ │     warn: mat.define-palette(mat.$red-palette)
+11 │ │   )
+12 │ │ ));
+   │ └──^
+   ╵
+  src\styles.scss 6:15  root stylesheet[0m [1m[35m[plugin angular-sass][0m
+
+    angular:styles/global:styles:1:8:
+[37m      1 │ @import [32m'src/styles.scss'[37m;
+        ╵         [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

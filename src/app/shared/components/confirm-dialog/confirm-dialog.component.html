@@ -1,0 +1,8 @@
+<div class="dialog-container">
+  <h2 mat-dialog-title>Confirmar Exclusão</h2>
+  <p class="dialog-message">Tem certeza que deseja deletar este usuário? Esta ação não pode ser desfeita.</p>
+  <mat-dialog-actions align="end">
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="warn" (click)="confirm()">Deletar</button>
+  </mat-dialog-actions>
+</div>

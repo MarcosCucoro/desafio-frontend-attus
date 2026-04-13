@@ -1,1 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$theme: mat.define-theme((color: (theme-type: dark)));
+
+@include mat.all-component-themes($theme);
+
+// Light theme (default)
+html,
+body {
+  --mdc-theme-primary: #3f51b5;
+  --mdc-theme-primary-rgb: 63, 81, 181;
+  --mdc-theme-accent: #e91e63;
+  --mdc-theme-accent-rgb: 233, 30, 99;
+  --mdc-theme-warn: #f44336;
+  --mdc-theme-warn-rgb: 244, 67, 54;
+  --mdc-surface: #ffffff;
+  --mdc-surface-rgb: 255, 255, 255;
+  --mdc-on-primary: #ffffff;
+  --mdc-on-accent: #ffffff;
+  --mdc-on-warn: #ffffff;
+  --mdc-on-surface: #000000;
+}
+
+// Dark theme
+body.dark-theme {
+  --mdc-theme-primary: #7986cb;
+  --mdc-theme-primary-rgb: 121, 134, 203;
+  --mdc-theme-accent: #f06292;
+  --mdc-theme-accent-rgb: 240, 98, 146;
+  --mdc-theme-warn: #ef5350;
+  --mdc-theme-warn-rgb: 239, 83, 80;
+  --mdc-surface: #121212;
+  --mdc-surface-rgb: 18, 18, 18;
+  --mdc-on-primary: #000000;
+  --mdc-on-accent: #000000;
+  --mdc-on-warn: #000000;
+  --mdc-on-surface: #ffffff;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mdc-theme-primary);
+  border-radius: 4px;
+}
+
+.custom-modal-container {
+  max-width: 100vw !important;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mdc-theme-primary);
+  border-radius: 4px;
+}
+
+.custom-modal-container {
+  max-width: 100vw !important;
+}
+
+.snackbar-success {
+  background: #22c55e;
+  color: white;
+}
+
+.snackbar-error {
+  background: #ef4444;
+  color: white;
+}
+
+.mat-mdc-paginator {
+  .mat-mdc-icon-button,
+  .mat-mdc-select,
+  .mat-mdc-select-arrow-wrapper svg {
+    color: var(--mdc-on-surface);
+  }
+
+  .mat-mdc-icon-button svg {
+    fill: var(--mdc-on-surface);
+  }
+}
