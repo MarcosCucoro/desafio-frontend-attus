@@ -1,11 +1,18 @@
 import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import { provideRouter } from '@angular/router';
+import { provideNgxMask } from 'ngx-mask';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { App } from './app';
+import { describe, it, expect, beforeEach } from 'vitest';
 
 describe('App', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [App],
-    }).compileComponents();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [App, NoopAnimationsModule],
+      providers: [provideHttpClient(), provideHttpClientTesting(), provideRouter([]), provideNgxMask()],
+    });
   });
 
   it('should create the app', () => {
@@ -14,10 +21,30 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should have the title signal with the correct value', () => {
     const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
+    const app = fixture.componentInstance;
+    expect((app as any).title()).toBe('desafio-frontend-attus');
+  });
+
+  it('should render app-header', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, desafio-frontend-attus');
+    expect(compiled.querySelector('app-header')).toBeTruthy();
+  });
+
+  it('should render app-add-button', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-add-button')).toBeTruthy();
+  });
+
+  it('should render router-outlet', () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });

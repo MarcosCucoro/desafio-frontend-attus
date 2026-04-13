@@ -11,6 +11,7 @@ Aplicação desenvolvida em **Angular** para gerenciamento de usuários, utiliza
 - RxJS
 - TypeScript
 - JSON Server
+- Vitest
 
 ---
 
@@ -93,6 +94,48 @@ PUT /users/:id
 ```bash
 DELETE /users/:id
 ```
+## 🧪 Testes
+
+O projeto utiliza **Vitest** integrado com o builder nativo do Angular (`@angular/build:unit-test`).
+
+### Executar os testes
+```bash
+npm test
+```
+
+### Executar em modo watch
+```bash
+npm run test:watch
+```
+
+### Executar uma única vez (CI)
+```bash
+npm run test:run
+```
+
+### Cobertura dos testes
+
+| Camada | Arquivo | Testes |
+|--------|---------|--------|
+| Services | `user.service.spec.ts` | 14 |
+| Services | `snackbar.service.spec.ts` | 9 |
+| Validators | `cpf.validator.spec.ts` | 12 |
+| Interceptors | `error.interceptor.spec.ts` | 4 |
+| Shared | `paginator-intl.spec.ts` | 6 |
+| Components | `app.spec.ts` | 5 |
+| Components | `header.component.spec.ts` | 6 |
+| Components | `add-button.component.spec.ts` | 3 |
+| Components | `toggle-theme.component.spec.ts` | 7 |
+| Components | `confirm-dialog.component.spec.ts` | 5 |
+| Components | `user-modal.component.spec.ts` | 13 |
+| Components | `user-list.component.spec.ts` | 8 |
+| Components | `user-card.component.spec.ts` | 1 |
+| Components | `user-form-modal.component.spec.ts` | 1 |
+| Components | `loading-spinner.component.spec.ts` | 1 |
+| **Total** | **15 arquivos** | **95 testes** |
+
+---
+
 ## 🧠 Observações
 - O ID dos usuários é gerado automaticamente pelo JSON Server.
 - A busca é feita localmente (client-side).
