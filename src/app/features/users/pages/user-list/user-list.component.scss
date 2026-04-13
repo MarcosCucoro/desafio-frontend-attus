@@ -104,19 +104,6 @@
   }
 }
 
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
-
-.error-container {
-  text-align: center;
-  color: red;
-  padding: 16px;
-}
-
 .users {
   display: grid;
   gap: 12px;
@@ -139,7 +126,7 @@
   gap: 16px;
   padding: 16px;
 
-  background-color: #1c1c1e;
+  background-color: var(--mdc-surface);
   border-radius: 12px;
 }
 
@@ -147,7 +134,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #2a2a2c;
+  background-color: var(--mdc-on-surface);
   position: relative;
   overflow: hidden;
 }
@@ -160,7 +147,7 @@
   height: 12px;
   border-radius: 6px;
   margin-bottom: 8px;
-  background-color: #2a2a2c;
+  background-color: var(--mdc-on-surface);
   position: relative;
   overflow: hidden;
 }

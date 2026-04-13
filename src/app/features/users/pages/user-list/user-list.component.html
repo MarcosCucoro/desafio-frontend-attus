@@ -15,7 +15,8 @@
   }
 
   @if(error()) {
-  <div class="error-container">
+  <div class="empty-state">
+    <mat-icon>person_off</mat-icon>
     <p>{{ error() }}</p>
   </div>
   }
